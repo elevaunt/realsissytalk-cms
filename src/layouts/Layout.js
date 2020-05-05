@@ -1,9 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
+import { GoogleFont, TypographyStyle } from "react-typography"
+import typography from '../utils/typography'
+
+import Footer from './Footer'
+import Navbar from './Navbar'
+import '../components/all.sass'
+import useSiteMetadata from '../components/SiteMetadata'
 import { withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
@@ -13,6 +16,8 @@ const TemplateWrapper = ({ children }) => {
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
+        <GoogleFont typography={typography} />
+        <TypographyStyle typography={typography} />
         <meta name="description" content={description} />
 
         <link
