@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import {bp} from '../utils/breakpoints'
+import mq from '../../utils/mediaQueries'
 
-import FullWidth from "../components/FullWidth"
+import FullWidth from "../elements/layout/FullWidth"
 
 
 const Hero = styled(FullWidth)(({ image }) => ({
   backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
   backgroundPosition: `top left`,
   backgroundAttachment: `fixed`,
-  [bp[1]]: {
+  [mq.md]: {
     justifyContent: "flex-end",
   }
 }));
@@ -22,7 +22,7 @@ const HeroCopy = styled("div")({
   alignItems: 'left',
   flexDirection: 'column',
   textAlign: "center",
-  [bp[1]]: {
+  [mq.md]: {
     maxWidth: "50%",
     textAlign: "left"
   }

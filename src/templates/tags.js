@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-import Layout from '../layouts/Layout'
+import Layout from '../components/compositions/Layout'
 
 class TagRoute extends React.Component {
   render() {

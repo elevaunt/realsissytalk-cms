@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Link, graphql } from 'gatsby'
 
-import Layout from '../layouts/Layout'
-import {Hero01} from '../layouts/Heroes'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
-import { SimpleCtaSection } from "../layouts/CTAs"
+import Layout from '../components/compositions/Layout'
+import {Hero01} from '../components/compositions/Heroes'
+import Features from '../components/compositions/Features'
+import BlogRoll from '../components/compositions/BlogRoll'
+import { SimpleCtaSection } from "../components/compositions/CTAs"
 
 
 export const IndexPageTemplate = ({
@@ -90,6 +90,9 @@ const IndexPage = ({ data }) => {
     </Layout>
   )
 }
+
+// Loop through each component, 
+// put it in the right order and give it the proper props
 
 IndexPage.propTypes = {
   data: PropTypes.shape({

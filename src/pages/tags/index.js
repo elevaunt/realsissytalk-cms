@@ -2,7 +2,7 @@ import React from 'react'
 import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-import Layout from '../../layouts/Layout'
+import Layout from '../../components/compositions/Layout'
 
 const TagsPage = ({
   data: {

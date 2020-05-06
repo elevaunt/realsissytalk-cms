@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from "../../utils/typography"
 
-import Button from "../components/Buttons"
-import FullWidth from "../components/FullWidth"
+import Button from "../elements/basic/Buttons"
+import FullWidth from "../elements/layout/FullWidth"
 
 const BackgroundImageFixed = styled(FullWidth)(({ image }) => ({
   backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`,

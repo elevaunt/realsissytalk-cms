@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Layout from '../../layouts/Layout'
+import Layout from '../../components/compositions/Layout'
 
 export default class Index extends React.Component {
   render() {
