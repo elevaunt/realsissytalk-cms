@@ -4,13 +4,16 @@ import styled from '@emotion/styled'
 import mq from '../../utils/mediaQueries'
 
 import FullWidth from "../elements/layout/FullWidth"
+import Container from "../elements/layout/Container";
 
 
 const Hero = styled(FullWidth)(({ image }) => ({
-  backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   backgroundPosition: `top left`,
   backgroundAttachment: `fixed`,
-  [mq.md]: {
+  [mq.min.md]: {
     justifyContent: "flex-end",
   }
 }));
@@ -18,13 +21,14 @@ const HeroCopy = styled("div")({
   display: 'flex',
   height: '150px',
   lineHeight: '1',
-  justifyContent: 'space-around',
+  justifyContent: 'space-evenly',
   alignItems: 'left',
   flexDirection: 'column',
   textAlign: "center",
-  [mq.md]: {
+  [mq.min.md]: {
     maxWidth: "50%",
-    textAlign: "left"
+    textAlign: "left",
+    // justifyContent: "center",
   }
 })
 const HeroTitle = styled("h1")({

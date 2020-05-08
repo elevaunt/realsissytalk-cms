@@ -5,27 +5,34 @@ import { rhythm } from "../../utils/typography"
 
 import Button from "../elements/basic/Buttons"
 import FullWidth from "../elements/layout/FullWidth"
+import Container from "../elements/layout/Container"
 
 const BackgroundImageFixed = styled(FullWidth)(({ image }) => ({
-  backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
   backgroundPosition: `top left`,
   backgroundAttachment: `fixed`,
 }));
 
 const Title = styled("h2")({
-  padding: rhythm(2)
+
+  padding: `${rhythm(1)} 0`
 })
-const Description = styled("p")({
-  
-})
+const Description = styled("p")({})
 
 
-export const SimpleCtaSection = ({data}) => {
-  return (
+export const SimpleSection = ({data}) => {
+  return data ? (
     <FullWidth>
-      {data.title && <Title children={data.title} />}
-      <Description children={data.description} />
-      <Button href={data.url}>{data.cta}</Button>
+      <Container flex column >
+        {data.title && <Title children={data.title} />}
+        {data.description && <Description children={data.description} />}
+        {data.cta && <Button href={data.url} size="small">{data.cta}</Button>}
+        {data.cta && <Button href={data.url} size="medium">{data.cta}</Button>}
+        {data.cta && <Button href={data.url} size="large">{data.cta}</Button>}
+      </Container>
     </FullWidth>
-  )
+  ) : null
+}
+
+export default {
+  SimpleSection
 }

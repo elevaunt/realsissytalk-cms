@@ -1,24 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { Link, graphql } from 'gatsby'
+import { Link as GatsbyLink, graphql } from 'gatsby'
+
+import Button from "../components/elements/basic/Buttons"
 
 import Layout from '../components/compositions/Layout'
 import {Hero01} from '../components/compositions/Heroes'
 import Features from '../components/compositions/Features'
 import BlogRoll from '../components/compositions/BlogRoll'
-import { SimpleCtaSection } from "../components/compositions/CTAs"
+import CTA from "../components/compositions/CTAs"
 
 
 export const IndexPageTemplate = ({
   hero,
+  ctaSimple,
   mainpitch,
   description,
   intro,
 }) => (
   <main>
     <Hero01 data={hero} />
-    <SimpleCtaSection data={mainpitch} />
+    <CTA.SimpleSection data={ctaSimple} />
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -30,21 +33,15 @@ export const IndexPageTemplate = ({
                     <h1 className="title">{mainpitch.title}</h1>
                   </div>
                   <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">Old Header Location</h3>
-                    <p>{description}</p>
+                      <h3 className="subtitle">{mainpitch.description}</h3>
                   </div>
                 </div>
                 <Features gridItems={intro.blurbs} />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
+                    <GatsbyLink className="btn" to="/products">
                       See all products
-                    </Link>
+                    </GatsbyLink>
                   </div>
                 </div>
                 <div className="column is-12">
@@ -53,9 +50,9 @@ export const IndexPageTemplate = ({
                   </h3>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
+                    <GatsbyLink className="btn" to="/blog">
                       Read more
-                    </Link>
+                    </GatsbyLink>
                   </div>
                 </div>
               </div>
@@ -69,6 +66,7 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   hero: PropTypes.object,
+  ctaSimple: PropTypes.object,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -83,6 +81,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         hero={frontmatter.hero}
+        ctaSimple={frontmatter.ctaSimple}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -118,6 +117,12 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+        ctaSimple {
+          title
+          description
+          cta
+          url
         }
         mainpitch {
           title

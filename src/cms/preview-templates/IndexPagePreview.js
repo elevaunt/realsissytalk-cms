@@ -9,9 +9,10 @@ const IndexPagePreview = ({ entry, getAsset }) => {
     return (
       <IndexPageTemplate
         hero={data.hero}
+        ctaSimple={data.ctaSimple}
+        mainpitch={data.mainpitch}
         description={data.description}
-        intro={data.intro || { blurbs: [] }}
-        mainpitch={data.mainpitch || {}}
+        intro={data.intro}
       />
     )
   } else {

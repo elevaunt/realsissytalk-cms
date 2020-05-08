@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
-import github from '../../img/github-icon.svg'
+import { Link as GatsbyLink } from 'gatsby'
 import logo from '../../img/logo.svg'
 
 import mq from "../../utils/mediaQueries"
@@ -19,9 +18,14 @@ const NavContainer = styled(Container)({
   display: "block",
   width: "100%",
   minHeight: "3.25rem",
+  paddingTop: 0,
+  paddingBottom: 0,
+  [mq.min.md]: {
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
   [mq.min.lg]: {
     display: "flex",
-    maxWidth: 960
   }
 })
 const NavBrand = styled("div")({
@@ -37,9 +41,16 @@ const NavBrand = styled("div")({
     marginLeft: "-.75rem"
   },
 })
-const NavItem = styled(Link)({
+const NavItem = styled(GatsbyLink)({
+  position: "relative",
+  color: "#4a4a4a",
   display: "flex",
+  flex: "0 0 auto",
   alignItems: "center",
+  padding: "0.5rem 0.75rem",
+  lineHeight: "1.5",
+  textDecoration: "none", 
+  cursor: "pointer",
 })
 const NavBurger = styled(({onClick, className}) => {
   return (
