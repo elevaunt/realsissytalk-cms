@@ -24,18 +24,18 @@ const HomeTitle = styled(({ className }) => <span className={className}><HomeSma
   fontSize: rhythm(5)
 })
 const HomeDivider = styled(({ className }) => {
-  const [isMobile, setIsMobile] = useState(window.outerWidth < 768)
-  let checkViewportWidth = () => {
-    if (window.outerWidth < 768) {
-      setIsMobile(true)
-    } else {
-      setIsMobile(false)
-    }
-  }
-  useEffect(() => {
-    window.addEventListener("resize", checkViewportWidth)
-  }, [])
-  console.log(isMobile)
+  // const [isMobile, setIsMobile] = useState(window.outerWidth < 768)
+  // let checkViewportWidth = () => {
+  //   if (window.outerWidth < 768) {
+  //     setIsMobile(true)
+  //   } else {
+  //     setIsMobile(false)
+  //   }
+  // }
+  // useEffect(() => {
+  //   window.addEventListener("resize", checkViewportWidth)
+  // }, [])
+  // console.log(isMobile)
   return <span className={className}>|</span>
 })({
   display: "inline-block",
