@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import styled from '@emotion/styled'
 import { Link as GatsbyLink } from 'gatsby'
-import logo from '../../img/logo.svg'
 
 import mq from "../../utils/mediaQueries"
 import {colors} from "../../utils/variables"

@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import styled from "@emotion/styled"
 
-import Layout from "../components/compositions/Layout"
-import Container from "../components/elements/layout/Container"
-import Button from "../components/elements/basic/Buttons"
 import { HeroHuge } from "../components/compositions/Heroes"
 import { rhythm } from "../utils/typography"
 import PlainPageWrapper from "../components/compositions/PlainPageWrapper"

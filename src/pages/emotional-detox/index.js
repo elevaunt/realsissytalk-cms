@@ -106,22 +106,22 @@ const EmotionalDetox = () => {
             </ul>
           </div>
           <RegisterImg />
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdnXQmcS0nzMGWIHgK7Bx2k0XTDNUVeuZbAVEIAhonGIV3yLw/viewform?embedded=true" width="640" height="2650" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdnXQmcS0nzMGWIHgK7Bx2k0XTDNUVeuZbAVEIAhonGIV3yLw/viewform?embedded=true" width="640" height="2650" frameborder="0" marginheight="0" marginwidth="0" title="Registration Form">Loading…</iframe>
         </Column>
         <Sidebar style={{ flex: "1 0" }}>
           <InstagramPhotos>
-            <img src={`${withPrefix('/')}img/detox-supplies.jpg`}/>
-            <img src={`${withPrefix('/')}img/shopping-cart.png`}/>
-            <img src={`${withPrefix('/')}img/you-have-it-all.png`}/>
+            <img src={`${withPrefix('/')}img/detox-supplies.jpg`} alt="Detox Supplies"/>
+            <img src={`${withPrefix('/')}img/shopping-cart.png`} alt="What's in your emotional shopping cart?"/>
+            <img src={`${withPrefix('/')}img/you-have-it-all.png`} alt="You can have it all"/>
           </InstagramPhotos>
           <AdditionalLinks>
             <Heading kind="h4">Click here to purchase product</Heading>
             <Products>
-              <p><Link href="https://doterra.me/1j2r48Qd"><img src={`${withPrefix("/")}img/llv.png`} /> Life Long Vitality</Link></p>
-              <p><Link href="https://doterra.me/7GjSrgua"><img src={`${withPrefix("/")}img/pb-assist.jpg`} style={{maxWidth: 125}}/> PB Assits (Probiotic)</Link></p>
-              <p><Link href="https://doterra.me/BSqrUOZc"><img src={`${withPrefix("/")}img/adaptiv.png`} style={{maxWidth: 125}}/> Adaptiv Capsules</Link></p>
-              <p><Link href="https://doterra.me/CdLFml7M"><img src={`${withPrefix("/")}img/lemon-eo.jpeg`} /> 15ml Lemon EO</Link></p>
-              <p><img src={`${withPrefix("/")}img/TerraZyme.jpg`} style={{ maxWidth: 190 }}/> TerraZyme</p>
+              <p><Link href="https://doterra.me/1j2r48Qd"><img src={`${withPrefix("/")}img/llv.png`}  alt="Life Long Vitality"/> Life Long Vitality</Link></p>
+              <p><Link href="https://doterra.me/7GjSrgua"><img src={`${withPrefix("/")}img/pb-assist.jpg`} style={{ maxWidth: 125 }} alt="PB Assist"/> PB Assist (Probiotic)</Link></p>
+              <p><Link href="https://doterra.me/BSqrUOZc"><img src={`${withPrefix("/")}img/adaptiv.png`} style={{ maxWidth: 125 }} alt="Adaptiv Capsules"/> Adaptiv Capsules</Link></p>
+              <p><Link href="https://doterra.me/CdLFml7M"><img src={`${withPrefix("/")}img/lemon-eo.jpeg`} alt="15ml Lemon EO"/> 15ml Lemon EO</Link></p>
+              <p><img src={`${withPrefix("/")}img/TerraZyme.jpg`} style={{ maxWidth: 190 }} alt="TerraZyme"/> TerraZyme</p>
             </Products>
             <p>If you're ready to get a doTERRA account for 25% off products <Link href="https://doterra.me/eAAgNdGU">click here</Link></p>
           </AdditionalLinks>
