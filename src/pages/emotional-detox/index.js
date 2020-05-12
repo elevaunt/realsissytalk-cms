@@ -12,6 +12,14 @@ import { rhythm } from "../../utils/typography"
 import PlainPageWrapper from "../../components/compositions/PlainPageWrapper"
 import mq from "../../utils/mediaQueries"
 
+
+const PageHero = styled(Hero02)({
+  backgroundPosition: "center -100px",
+  [mq.min.md]: {
+    backgroundPosition: "center -433px"
+  }
+})
+
 let heroTitleStyles = {
   fontFamily: "cuisine,sans-serif",
   fontWeight: 500,
@@ -86,7 +94,7 @@ let heroData = {
 const EmotionalDetox = () => {
   return (
     <PlainPageWrapper>
-      <Hero02 data={heroData} bgPosition={'center -433px'} titleStyles={heroTitleStyles} />
+      <PageHero data={heroData} titleStyles={heroTitleStyles} />
       <Container style={{paddingBottom: 0}}>
         <Heading kind="h2" style={{ textAlign: "center", color: "#ffd457"}}>Let's dive in to 22 days of <br/> self LOVE, self CARE and self EXPRESSION</Heading>
       </Container>

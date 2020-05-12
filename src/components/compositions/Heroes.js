@@ -9,7 +9,7 @@ import Heading from "../elements/typography/Heading"
 import { rhythm } from "../../utils/typography"
 
 
-const Hero = styled(FullWidth)({
+export const Hero = styled(FullWidth)({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -18,11 +18,11 @@ const Hero = styled(FullWidth)({
     justifyContent: "flex-end",
   }
 });
-const HeroFullScreen = styled(Hero)({
+export const HeroFullScreen = styled(Hero)({
   width: "100vw",
   height: "100vh"
 })
-const HeroCopy = styled("div")({
+export const HeroCopy = styled("div")({
   display: 'flex',
   maxWidth: "100%",
   justifyContent: 'space-evenly',
@@ -36,7 +36,7 @@ const HeroCopy = styled("div")({
     textAlign: align ? align : "left",
   }
 }))
-const HeroTitle = styled((props) => {
+export const HeroTitle = styled((props) => {
   return <Heading kind="h1" {...props} />
 })(({ styles }) => ({
   color: styles && styles.color ? styles.color : 'inherit',
@@ -47,7 +47,7 @@ const HeroTitle = styled((props) => {
     fontSize: rhythm(2)
   }
 }))
-const HeroSubTitle = styled((props) => {
+export const HeroSubTitle = styled((props) => {
   return <Heading kind="h3" {...props} />
 })(({styles}) => ({
   color: styles && styles.color ? styles.color : 'inherit',
@@ -70,9 +70,9 @@ export const Hero01 = ({ bgPosition = `top left`, data}) => {
   )
 }
 
-export const Hero02 = ({ bgPosition = `top left`, titleStyles, subTitleStyles, data}) => {
+export const Hero02 = ({ className, bgPosition = `top left`, titleStyles, subTitleStyles, data}) => {
   return (
-    <Hero image={data.image} bgPosition={bgPosition}>
+    <Hero className={className} image={data.image} bgPosition={bgPosition}>
       <Container flex>
         <HeroCopy align="center">
           <HeroTitle styles={titleStyles}>

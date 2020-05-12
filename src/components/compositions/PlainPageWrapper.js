@@ -10,7 +10,7 @@ const PlainPageWrapper = ({ children }) => {
     <div>
       <Helmet>
         <html lang="en" />
-        <title>{title} test</title>
+        <title>{title}</title>
         {/* <GoogleFont typography={typography} /> */}
         {/* <TypographyStyle typography={typography} /> */}
         <link rel="stylesheet" href="https://use.typekit.net/szy8mbs.css"></link>
