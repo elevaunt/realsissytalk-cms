@@ -37,7 +37,7 @@ const PlainPageWrapper = ({ children }) => {
         <link
           rel="mask-icon"
           href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-          color="#ff4400"
+          color="#f07959"
         />
         <meta name="theme-color" content="#fff" />
 
