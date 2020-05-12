@@ -4,9 +4,9 @@ import {colors} from "../../../utils/variables"
 
 export const Link = styled("a")({
   position: "relative",
-  color: colors.primary.default,
+  color: colors.primary.dark,
   ":hover": {
-    color: colors.primary.dark
+    color: colors.primary.default
   }
 })
 

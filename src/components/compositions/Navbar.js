@@ -4,6 +4,7 @@ import { Link as GatsbyLink } from 'gatsby'
 import logo from '../../img/logo.svg'
 
 import mq from "../../utils/mediaQueries"
+import {colors} from "../../utils/variables"
 import Container from "../elements/layout/Container"
 
 const Nav = styled("nav")({
@@ -43,7 +44,7 @@ const NavBrand = styled("div")({
 })
 const NavItem = styled(GatsbyLink)({
   position: "relative",
-  color: "#4a4a4a",
+  // color: "#4a4a4a",
   display: "flex",
   flex: "0 0 auto",
   alignItems: "center",
@@ -51,6 +52,10 @@ const NavItem = styled(GatsbyLink)({
   lineHeight: "1.5",
   textDecoration: "none", 
   cursor: "pointer",
+  color: colors.primary.default,
+  ":hover": {
+    color: colors.primary.dark
+  }
 })
 const NavBurger = styled(({onClick, className}) => {
   return (
@@ -127,17 +132,18 @@ const Navbar = () => {
       <NavContainer>
           <NavBrand>
             <NavItem to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+              {/* <img src={logo} alt="Kaldi" style={{ width: '88px' }} /> */}
+              Real Sissy Talk
             </NavItem>
-            <NavBurger isActive={isNavbarActive} onClick={toggleHamburger} />
+            {/* <NavBurger isActive={isNavbarActive} onClick={toggleHamburger} /> */}
           </NavBrand>
-          <NavMenu id="navMenu" isActive={isNavbarActive}>
+          {/* <NavMenu id="navMenu" isActive={isNavbarActive}>
             <NavItem className="navbar-item" to="/about">About</NavItem>
             <NavItem className="navbar-item" to="/products">Products</NavItem>
             <NavItem className="navbar-item" to="/blog">Blog</NavItem>
             <NavItem className="navbar-item" to="/contact">Contact</NavItem>
             <NavItem className="navbar-item" to="/contact/examples">Form Examples</NavItem>
-          </NavMenu>
+          </NavMenu> */}
       </NavContainer>
     </Nav>
   )

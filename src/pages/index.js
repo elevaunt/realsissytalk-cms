@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from "@emotion/styled"
 
 import Layout from "../components/compositions/Layout"
@@ -6,10 +6,12 @@ import Container from "../components/elements/layout/Container"
 import Button from "../components/elements/basic/Buttons"
 import { HeroHuge } from "../components/compositions/Heroes"
 import { rhythm } from "../utils/typography"
+import PlainPageWrapper from "../components/compositions/PlainPageWrapper"
 
 const HomeSmall = styled('small')({
   display: "block",
-  fontSize: rhythm(1),
+  color: "#fff",
+  fontSize: ".45em",
   fontFamily: "Montserrat",
   fontWeight: 400
 })
@@ -19,9 +21,26 @@ const HomeEm = styled('span')({
   verticalAlign: "bottom",
 })
 const HomeTitle = styled(({ className }) => <span className={className}><HomeSmall>Real</HomeSmall> Sissy Talk</span>)({
-  fontFamily: "Times New Roman",
+  fontFamily: "cuisine,sans-serif",
+  fontWeight: 500,
+  fontStyle: "normal",
+  fontSize: rhythm(5)
 })
-const HomeDivider = styled(({ className }) => <span className={className}>|</span>)({
+const HomeDivider = styled(({ className }) => {
+  const [isMobile, setIsMobile] = useState(window.outerWidth < 768)
+  let checkViewportWidth = () => {
+    if (window.outerWidth < 768) {
+      setIsMobile(true)
+    } else {
+      setIsMobile(false)
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("resize", checkViewportWidth)
+  }, [])
+  console.log(isMobile)
+  return <span className={className}>|</span>
+})({
   display: "inline-block",
   margin: `4px ${rhythm(1)} 0`,
   verticalAlign: "top",
@@ -37,11 +56,17 @@ let homepageData = {
   data: {
     title: <HomeTitle />,
     subTitle: <HomeSubtitle />,
-    image: "https://picsum.photos/id/1069/1200/800",
+    image: "https://picsum.photos/id/53/1200/800",
   },
   bgPosition: ""
 }
 
-const Homepage = () => <HeroHuge {...homepageData} />
+const Homepage = () => {
+  return (
+    <PlainPageWrapper>
+      <HeroHuge {...homepageData} subTitleStyles={{color: "#fff"}}/>
+    </PlainPageWrapper>
+  )
+}
 
 export default Homepage

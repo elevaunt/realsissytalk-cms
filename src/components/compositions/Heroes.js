@@ -6,6 +6,7 @@ import mq from '../../utils/mediaQueries'
 import FullWidth from "../elements/layout/FullWidth"
 import Container from "../elements/layout/Container"
 import Heading from "../elements/typography/Heading"
+import { rhythm } from "../../utils/typography"
 
 
 const Hero = styled(FullWidth)({
@@ -23,6 +24,7 @@ const HeroFullScreen = styled(Hero)({
 })
 const HeroCopy = styled("div")({
   display: 'flex',
+  maxWidth: "100%",
   justifyContent: 'space-evenly',
   alignItems: 'left',
   flexDirection: 'column',
@@ -36,25 +38,22 @@ const HeroCopy = styled("div")({
 }))
 const HeroTitle = styled((props) => {
   return <Heading kind="h1" {...props} />
-})({
-  // boxShadow: 'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-  // backgroundColor: 'rgb(255, 68, 0)',
-  color: 'white',
-  // lineHeight: '1',
+})(({ styles }) => ({
+  color: styles && styles.color ? styles.color : 'inherit',
   padding: '0.25em',
   margin: `0`,
-  fontWeight: "bold"
-})
+  fontWeight: "bold",
+  [mq.max.md]: {
+    fontSize: rhythm(2)
+  }
+}))
 const HeroSubTitle = styled((props) => {
   return <Heading kind="h3" {...props} />
-})({
-  // boxShadow: 'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-  // backgroundColor: 'rgb(255, 68, 0)',
-  color: 'white',
-  // lineHeight: '1',
+})(({styles}) => ({
+  color: styles && styles.color ? styles.color : 'inherit',
   padding: '0.25em',
   margin: `0`
-})
+}))
 
 export const Hero01 = ({ bgPosition = `top left`, data}) => {
   return (
@@ -71,15 +70,15 @@ export const Hero01 = ({ bgPosition = `top left`, data}) => {
   )
 }
 
-export const Hero02 = ({ bgPosition = `top left`, data}) => {
+export const Hero02 = ({ bgPosition = `top left`, titleStyles, subTitleStyles, data}) => {
   return (
     <Hero image={data.image} bgPosition={bgPosition}>
       <Container flex>
         <HeroCopy align="center">
-          <HeroTitle>
+          <HeroTitle styles={titleStyles}>
             {data.title}
           </HeroTitle>
-          <HeroSubTitle>
+          <HeroSubTitle styles={subTitleStyles}>
             {data.subTitle}
           </HeroSubTitle>
         </HeroCopy>
@@ -88,7 +87,7 @@ export const Hero02 = ({ bgPosition = `top left`, data}) => {
   )
 }
 
-export const HeroHuge = ({ bgPosition = `top left`, data}) => {
+export const HeroHuge = ({ bgPosition = `top left`, subTitleStyles, data}) => {
   return (
     <HeroFullScreen image={data.image} bgPosition={bgPosition}>
       <Container flex>
@@ -96,7 +95,7 @@ export const HeroHuge = ({ bgPosition = `top left`, data}) => {
           <HeroTitle>
             {data.title}
           </HeroTitle>
-          <HeroSubTitle>
+          <HeroSubTitle styles={subTitleStyles}>
             {data.subTitle}
           </HeroSubTitle>
         </HeroCopy>

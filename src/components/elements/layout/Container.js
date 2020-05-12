@@ -7,10 +7,10 @@ import mq from "../../../utils/mediaQueries";
 export const Container = styled("div")({
   flexGrow: "1",
   position: "relative",
-  width: "auto",
+  width: "100%",
   maxWidth: breakpoints.xl,
   margin: "0 auto",
-  padding:`${rhythm(1.5)} ${rhythm(1)}`,
+  padding:`${rhythm(1.5)} ${rhythm(.5)}`,
   [mq.min.md]: {
     padding:`${rhythm(3)} ${rhythm(3)}`
   }
@@ -18,6 +18,10 @@ export const Container = styled("div")({
   flex && {
     display: "flex",
     justifyContent: "center",
+    flexWrap: "wrap",
+    [mq.max.md]: {
+      flexDirection: "column"
+    }
   },
   column && {
     flexDirection: "column"

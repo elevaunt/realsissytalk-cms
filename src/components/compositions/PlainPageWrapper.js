@@ -9,13 +9,13 @@ import Navbar from './Navbar'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
-const TemplateWrapper = ({ children }) => {
+const PlainPageWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>
+        <title>{title} test</title>
         {/* <GoogleFont typography={typography} /> */}
         {/* <TypographyStyle typography={typography} /> */}
         <link rel="stylesheet" href="https://use.typekit.net/szy8mbs.css"></link>
@@ -54,11 +54,9 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
       <div>{children}</div>
-      {/* <Footer /> */}
     </div>
   )
 }
 
-export default TemplateWrapper
+export default PlainPageWrapper

@@ -18,12 +18,12 @@ export const colors = {
     }
   },
   primary: {
-    /** primary.light: lightsalmon */
-    // light: "lightsalmon",
-    /** primary.default: salmon */
-    default: "lightsalmon",
-    /** primary.dark: darksalmon */
-    dark: "darksalmon"
+    /** primary.light: light salmon #f4ddd5 */
+    light: "#f4ddd5",
+    /** primary.default: salmon #f07959 */
+    default: "#fbaf99",
+    /** primary.dark: darker salmon #fbaf99 */
+    dark: "#f07959"
   },
   secondary: {},
 }
