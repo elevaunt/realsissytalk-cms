@@ -8,6 +8,6 @@
   YARN_FLAGS = "--no-ignore-optional"
 [[redirects]]
   from = "/"
-  to = "/emotional-detox"
+  to = "/emotional-detox/"
   status = 302
-  force = false
+  force = true
