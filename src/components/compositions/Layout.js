@@ -16,8 +16,8 @@ const TemplateWrapper = ({ children }) => {
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
-        <GoogleFont typography={typography} />
-        <TypographyStyle typography={typography} />
+        {/* <GoogleFont typography={typography} /> */}
+        {/* <TypographyStyle typography={typography} /> */}
         <meta name="description" content={description} />
 
         <link

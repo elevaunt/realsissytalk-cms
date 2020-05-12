@@ -1,0 +1,4 @@
+---
+templateKey: 'styleguide'
+path: /styleguide
+---

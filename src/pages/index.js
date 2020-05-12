@@ -18,7 +18,7 @@ const HomeEm = styled('span')({
   fontFamily: "Montserrat",
   verticalAlign: "bottom",
 })
-const HomeTitle = styled(({className}) => <span className={className}><HomeSmall>Real</HomeSmall> Sissy Talk</span>)({
+const HomeTitle = styled(({ className }) => <span className={className}><HomeSmall>Real</HomeSmall> Sissy Talk</span>)({
   fontFamily: "Times New Roman",
 })
 const HomeDivider = styled(({ className }) => <span className={className}>|</span>)({
@@ -26,7 +26,7 @@ const HomeDivider = styled(({ className }) => <span className={className}>|</spa
   margin: `4px ${rhythm(1)} 0`,
   verticalAlign: "top",
 })
-const HomeSubtitle = styled(({className}) => {
+const HomeSubtitle = styled(({ className }) => {
   return <span className={className}>self <HomeEm>LOVE</HomeEm> <HomeDivider /> self <HomeEm>CARE</HomeEm> <HomeDivider /> self <HomeEm>EXPRESSION</HomeEm></span>
 })({
   position: "relative",
@@ -38,10 +38,10 @@ let homepageData = {
     title: <HomeTitle />,
     subTitle: <HomeSubtitle />,
     image: "https://picsum.photos/id/1069/1200/800",
-  }, 
+  },
   bgPosition: ""
 }
 
-const Homepage = () => <HeroHuge {...homepageData}/>
+const Homepage = () => <HeroHuge {...homepageData} />
 
 export default Homepage

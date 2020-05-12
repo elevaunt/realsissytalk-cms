@@ -14,14 +14,16 @@ export const Container = styled("div")({
   [mq.min.md]: {
     padding:`${rhythm(3)} ${rhythm(3)}`
   }
-}, ({flex, column, vertPadding}) => ([
+}, ({flex, column, vertAlign = "center", vertPadding}) => ([
   flex && {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
   },
   column && {
     flexDirection: "column"
+  },
+  vertAlign && {
+    alignItems: vertAlign
   },
   vertPadding && {
     paddingTop: vertPadding,

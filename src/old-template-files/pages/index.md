@@ -1,10 +1,10 @@
 ---
 heading: Real Sissy Talk
-subheading: Let's get real and talk about what really matters
+subTitle: Let's get real and talk about what really matters
 templateKey: index-page
 hero:
   title: Real Sissy Talk
-  subheading: This is the place to be
+  subTitle: This is the place to be
   image: /img/chemex.jpg
 ctaSimple:
   title: Hey Sister!
